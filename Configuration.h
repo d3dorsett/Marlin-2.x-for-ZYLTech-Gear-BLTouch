@@ -778,9 +778,8 @@
  *                                      X, Y, Z, E0 [, E1[, E2...]]
  */
 
-// D3 13NOV2020 Change ZYLTech Gear v3 MKS Robin Nano (Enable FreeZ ABL Custom Peformance Change) (from orginal ZYLTech firmware v204272020)
+// D3 13NOV2020 Change ZYLTech Gear v3 MKS Robin Nano (Enable FreeZ ABL and BLTouch) (Custom Peformance Change from orginal ZYLTech firmware v204272020)
 //#define DEFAULT_MAX_FEEDRATE          { 300, 300, 5, 25 }
-//#define DEFAULT_MAX_FEEDRATE          { 300, 300, 20, 25 } //ABL from Ender 3
 #define DEFAULT_MAX_FEEDRATE          { 200, 200, 4, 70 }
 
 
@@ -911,7 +910,7 @@
  * Use G29 repeatedly, adjusting the Z height at each point with movement commands
  * or (with LCD_BED_LEVELING) the LCD controller.
  */
-// D3 07NOV2020 Disable ZYLTech Gear v3 MKS Robin Nano (Enable FreeZ ABL, use this without FreeZ ABL)
+// D3 07NOV2020 Disable ZYLTech Gear v3 MKS Robin Nano (Enable for FreeZ ABL or no probe. Disable for BLTouch)
 //#define PROBE_MANUALLY
 //#define MANUAL_PROBE_START_Z 0.2
 
@@ -919,7 +918,7 @@
  * A Fix-Mounted Probe either doesn't deploy or needs manual deployment.
  *   (e.g., an inductive probe or a nozzle-based probe-switch.)
  */
-// D3 20NOV2020 Enabled ZYLTech Gear v3 MKS Robin Nano (Enable for FreeZ ABL, Disable for BLTouch )
+// D3 20NOV2020 Enabled ZYLTech Gear v3 MKS Robin Nano (Enable for FreeZ ABL or no probe, Disable for BLTouch )
 //#define FIX_MOUNTED_PROBE
 
 /**
@@ -1025,9 +1024,8 @@
  *     |    [-]    |
  *     O-- FRONT --+
  */
-// D3 07NOV2020 Changed ZYLTech Gear v3 MKS Robin Nano
+// D3 07NOV2020 Changed ZYLTech Gear v3 MKS Robin Nano (No probe)
 //#define NOZZLE_TO_PROBE_OFFSET { 10, 10, 0 }
-//#define NOZZLE_TO_PROBE_OFFSET { 14, -40, 0 }
 // D3 13NOV2020 Changed ZYLTech Gear v3 MKS Robin Nano (Enable FreeZ ABL) (Changed Z value)
 //#define NOZZLE_TO_PROBE_OFFSET { 0, -50, -3 } //FreeZ ABL
 #define NOZZLE_TO_PROBE_OFFSET { 0, -35, 0 }   //BLTouch
@@ -1037,7 +1035,7 @@
 #define PROBING_MARGIN 10
 
 // X and Y axis travel speed (mm/min) between probes
-// D3 13NOV2020 Change ZYLTech Gear v3 MKS Robin Nano (Enable FreeZ ABL Custom Peformance Change)
+// D3 13NOV2020 Change ZYLTech Gear v3 MKS Robin Nano (Enable FreeZ ABL or BLTouch Custom Peformance Change)
 //#define XY_PROBE_SPEED (133*60)
 #define XY_PROBE_SPEED (167*60)
 
@@ -1246,8 +1244,7 @@
 
   // Set one or more commands to execute on filament runout.
   // (After 'M412 H' Marlin will ask the host to handle the process.)
-  // D3 07NOV2020 Check Try M25 is does not require a screen
-  // D3 21NOV2020 Disable ZYLTech Gear v2 MKS Robin Nano (Use M600 for Marlin menus. Use M25 for Nano menus.)
+  // D3 21NOV2020 Enabled ZYLTech Gear v2 MKS Robin Nano (Use M600 for Marlin menus. Use M25 for Nano menus.)
   #define FILAMENT_RUNOUT_SCRIPT "M600"
 
   // After a runout is detected, continue printing this length of filament
@@ -1306,7 +1303,7 @@
 // D3 20NOV2020 Enabled ZYLTech Gear v3 MKS Robin Nano (Enable for BLTouch, Disable for FreeZ ABL)
 #define AUTO_BED_LEVELING_BILINEAR
 //#define AUTO_BED_LEVELING_UBL
-// D3 13NOV2020 Disable ZYLTech Gear v3 MKS Robin Nano (Enable for FreeZ ABL, Disable for BLTouch)
+// D3 13NOV2020 Disable ZYLTech Gear v3 MKS Robin Nano (Enable for FreeZ ABL or no probe, Disable for BLTouch)
 //#define MESH_BED_LEVELING
 
 /**
@@ -1414,7 +1411,7 @@
  * Include a guided procedure if manual probing is enabled.
  */
 // D3 07NOV2020 Enabled ZYLTech Gear v3 MKS Robin Nano (Enable for Marlin menus, Disable for Nano menus)
-//#define LCD_BED_LEVELING
+#define LCD_BED_LEVELING
 
 #if ENABLED(LCD_BED_LEVELING)
   #define MESH_EDIT_Z_STEP  0.025 // (mm) Step size while manually probing Z axis.
@@ -2394,7 +2391,7 @@
 //
 // ADS7843/XPT2046 ADC Touchscreen such as ILI9341 2.8
 //
-// D3 21NOV2020 Disable ZYLTech Gear v2 MKS Robin Nano (Enable for Marlin menus, Disable Nano menus)
+// D3 21NOV2020 Enabled ZYLTech Gear v2 MKS Robin Nano (Enable for Marlin menus, Disable Nano menus)
 #define TOUCH_SCREEN
 #if ENABLED(TOUCH_SCREEN)
   #define BUTTON_DELAY_EDIT  50 // (ms) Button repeat delay for edit screens
