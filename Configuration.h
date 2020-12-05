@@ -767,9 +767,9 @@
  * Override with M92
  *                                      X, Y, Z, E0 [, E1[, E2...]]
  */
-// D3 Changed 02DEC2020 ZYLTech Gear v3 with MKS Robin Nano v1.2
+// D3 Changed 03DEC2020 ZYLTech Gear v3 with MKS Robin Nano v1.2
 //#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 4000, 500 }
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 160, 160, 400, 93 }
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 161.3, 161.3, 400, 97.5 }
 
 /**
  * Default Max Feed Rate (mm/s)
@@ -823,7 +823,8 @@
  * When changing speed and direction, if the difference is less than the
  * value set here, it may happen instantaneously.
  */
-//#define CLASSIC_JERK
+// D3 Enabled 04DEC2020 ZYLTech Gear v3 with MKS Robin Nano v1.2
+#define CLASSIC_JERK
 #if ENABLED(CLASSIC_JERK)
   #define DEFAULT_XJERK 10.0
   #define DEFAULT_YJERK 10.0
